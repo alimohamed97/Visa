@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32126.317
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Visa.Portal", "Visa.Portal\Visa.Portal.csproj", "{2ABA2B04-17A9-47EB-A4CC-6F37A0691D2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Visa.DAL", "Visa.DAL\Visa.DAL.csproj", "{B050D297-2B53-4FD0-BDC9-B10B288E36F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Visa.BL", "Visa.BL\Visa.BL.csproj", "{5DD5BBD3-2CAA-4562-AC7C-7E2A94C7ABB0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2ABA2B04-17A9-47EB-A4CC-6F37A0691D2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2ABA2B04-17A9-47EB-A4CC-6F37A0691D2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2ABA2B04-17A9-47EB-A4CC-6F37A0691D2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2ABA2B04-17A9-47EB-A4CC-6F37A0691D2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B050D297-2B53-4FD0-BDC9-B10B288E36F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B050D297-2B53-4FD0-BDC9-B10B288E36F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B050D297-2B53-4FD0-BDC9-B10B288E36F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B050D297-2B53-4FD0-BDC9-B10B288E36F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DD5BBD3-2CAA-4562-AC7C-7E2A94C7ABB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DD5BBD3-2CAA-4562-AC7C-7E2A94C7ABB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DD5BBD3-2CAA-4562-AC7C-7E2A94C7ABB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DD5BBD3-2CAA-4562-AC7C-7E2A94C7ABB0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {567B4E04-66BB-4ACF-B5AC-C8C6FB857E93}
+	EndGlobalSection
+EndGlobal

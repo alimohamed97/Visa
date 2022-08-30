@@ -1,0 +1,156 @@
+.header-contact
+{
+    background: url(../images/new/contact/header.png) !important;
+    background-size: cover !important;
+    height: 100vh !important;
+    padding-top: 270px  !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    background-position: center !important;
+
+}
+
+.title-desc-blog{font-size: 40px !important;color: #fff;transform: translateY(150px);}
+.title-desc-blog span{display: block !important;margin-bottom: 10px;}
+
+
+
+.about-box
+{
+    border: 3px solid #B22D34;
+    margin: 50px 90px;
+}
+.about-box .data{background: #fff;padding-top: 30px;}
+
+
+.about-box h4{font-size: 22px;color: #B22D34;}
+.about-box p{color: #111;}
+
+.contact-us form input, .contact-us form label{color: #B22D34;font-size: 20px;font-weight: bolder;}
+
+.contact-us form input, .contact-us form textarea
+{
+    border: 2px solid #B22D34;
+    border-radius: 10px;
+    background: #DDDDDD;
+}
+
+.contact-from-image{
+    margin-top: 30px;
+    transform: translateX(50px);
+    display: flex;
+    justify-content: space-around;
+}
+#submit-contact
+{
+    background: #B22D34 !important;
+    border-radius: 10px;
+    border-color: #B22D34;
+    padding: 0 40px;
+    padding-top: 10px;
+}
+
+
+@media only screen and (max-width: 650px) {
+    .header-contact
+ {
+     padding-top: 100px  !important;
+ }
+
+ 
+ }
+
+ #track_your_request{
+    padding-top: 3px !important;
+}
+#track_your_request_menu{
+    height: 377px;
+    flex-direction: column;
+    width: 407px;
+    position: absolute;
+    z-index: 20;
+    background-color: #b22d34ed;
+    padding-left: 20%;
+    border-radius: 10px;
+    left: -7%;
+    top: 113%;
+    display: none;
+    
+}
+
+#track_your_request_menu>input{
+    width: 90%;
+    border-radius: 8px;
+    border: 1px solid #a92e33;
+    padding: 1.5%;
+}
+#track_your_request_menu>input::placeholder{
+    color: #808080c9;
+    font-size: small;
+    font-family: Khmer MN !important;
+    
+}
+input[type="date"]::-webkit-datetime-edit-text,
+input[type="date"]::-webkit-datetime-edit-month-field,
+input[type="date"]::-webkit-datetime-edit-day-field,
+input[type="date"]::-webkit-datetime-edit-year-field {
+    color: #808080c9;
+}
+#track_your_request_menu>.track_your_request_button{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    
+    
+}
+
+#track_your_request_menu>#close_menu{
+
+width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 25px;
+    color: #ffffff;
+
+}
+#track_your_request_menu>label{
+    margin-top: 25px;
+    margin-bottom: -2px;
+    color: white; 
+    font-family: Khmer MN !important;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+#track_your_request_menu>div button{
+
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 12px;
+    color: #ac3035;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Khmer MN';
+    padding: 2% 9% 2% 9%;
+    border: 1px solid #a92e33;
+
+}
+
+
+
+#track_your_request_menu:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 35%;
+    margin-left: -35px;
+    margin-top: -15px;
+    width: 0;
+    z-index: 1;
+    height: 0;
+    border-bottom: solid 15px #aa2f34;
+    border-left: solid 15px transparent;
+    border-right: solid 15px transparent;
+    
+}

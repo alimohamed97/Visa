@@ -1,0 +1,23 @@
+.header-blogs
+{
+    background: url(../images/new/blogs/header.png) !important;
+    background-size: cover !important;
+    height: 100vh !important;
+    padding-top: 320px !important;
+}
+
+.title-desc-blog{font-size: 40px !important;color: #fff;}
+.title-desc-blog span{display: block !important;margin-bottom: 10px;}
+
+a:hover{
+   
+    text-decoration: none !important;
+}
+.section_three{
+    background: url(../images/new/test.png) !important;
+    background-color: #F5F7FB !important;
+    background-repeat: no-repeat !important;
+    background-position-y: -226px !important;
+    background-size: 25% !important;
+
+}

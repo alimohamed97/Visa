@@ -1,0 +1,191 @@
+﻿@model BlogsVM
+
+
+
+
+<div class="post d-flex flex-column-fluid" id="kt_post">
+    <div id="kt_content_container" class="container-xxl">
+        <div class="card shadow-sm">
+            <div class="card-header">
+                <h3 class="card-title">Create Blogs</h3>
+            </div>
+            <form class="form" asp-controller="Blogs" asp-action="Create" method="post" enctype="multipart/form-data">
+
+                <br /><br />
+@*                <div asp-validation-summary="All" class="text-danger"></div>
+*@                <br /><br />
+
+                @*<input type="hidden" id="Id" name="Id" />
+                <input type="hidden" id="ImageName" name="ImageName" />*@
+                <div class="card-body">
+                    <div class="form-group py-2">
+                        <div class="row">
+                            <div class="col-6">
+                                <!--begin::Label-->
+                                <label class=" fs-6 fw-bold mb-2" for="TitleAr">Arabic Title</label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <input type="text" class="form-control form-control-solid" placeholder="" name="Title_Ar" />
+                                <!--end::Input-->
+                            </div>
+                            <div class="col-6">
+                                <!--begin::Label-->
+                                <label class="fs-6 fw-bold mb-2" for="Title_En">
+                                    <span class="required">English Title</span>
+
+                                </label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <input type="text" class="form-control form-control-solid" placeholder="" name="Title_En" />
+                                <!--end::Input-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group py-2">
+                        <div class="row">
+
+                            <div class="col-6">
+                                <!--begin::Label-->
+                                <label class="fs-6 fw-bold mb-2" for="Text_Ar">
+                                    <span class="required">Arabic Text</span>
+                                </label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <textarea type="text" class="form-control form-control-solid" rows="4" placeholder="" name="Text_Ar" id="Text_Ar"></textarea>
+                                <!--end::Input-->
+                            </div>
+                            <div class="col-6">
+                                <!--begin::Label-->
+                                <label class="fs-6 fw-bold mb-2" for="Text_EN">
+                                    <span class="required">English Text</span>
+                                </label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <textarea type="text" class="form-control form-control-solid" rows="4"placeholder="" name="Text_EN" id="Text_EN"></textarea>
+                                <!--end::Input-->
+                            </div>
+                        </div>
+                    </div>
+                 
+
+                    <div class="form-group py-2">
+                        <div class="row">
+                            <div class="col-12">
+                                <!--begin::Label-->
+                                <label class="fs-6 fw-bold mb-2" for="Image">
+                                    <span>Upload Image</span>
+                                </label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <input type="file" class="form-control form-control-solid" name="Image" />
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="form-group py-2">
+                        <div class="row">
+                            <div class="col-6">
+                                 <span class="required">Author Name</span>
+                             @Html.DropDownListFor(m => m.AuthorId, ViewBag.AuthortList as SelectList, "--AuthortList--", new { @id = "DropDwn1", @class = "form-control" })
+
+                            </div>
+                            <div class="col-6">
+                                <span class="required">Category Name</span>
+                             @Html.DropDownListFor(m => m.CategoryId,  ViewBag.CategoryList as SelectList, "--CategoryList--", new { @id = "DropDwn1", @class = "form-control" })
+
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+
+                </div>
+
+                  
+               
+
+            
+
+                <br /> <br />
+                <center>
+                    <input type="submit" value="Save" class="btn btn-lg btn-primary" />
+                    <input type="reset" value="Clear" class="btn btn-lg btn-warning" />
+                </center>
+                <br /> <br />
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+<script src="~/assets/plugins/custom/ckeditor/ckeditor-classic.bundle.js"></script>
+<script src="~/assets/plugins/custom/ckeditor/ckeditor-inline.bundle.js"></script>
+<script src="~/assets/plugins/custom/ckeditor/ckeditor-balloon.bundle.js"></script>
+<script src="~/assets/plugins/custom/ckeditor/ckeditor-balloon-block.bundle.js"></script>
+<script src="~/assets/plugins/custom/ckeditor/ckeditor-document.bundle.js"></script>
+<script src="~/assets/jquery/jquery.min.js"></script>
+<script>
+
+
+    ClassicEditor
+        .create(document.querySelector('#Text_Ar'))
+        .then(editor => {
+            console.log(editor);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+
+
+    ClassicEditor
+        .create(document.querySelector('#Text_EN'))
+        .then(editor => {
+            console.log(editor);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+
+
+    $(function () {
+
+       
+
+        $(".x-Blogs").click(function () {
+           
+            var BlogsId = $(this).val();
+            $.ajax({
+
+                type: "Post",
+                url: "/Blogs/GetBlogsById/",
+                data: { id: BlogsId },
+                success: function (res) {
+
+
+
+                    $("#Id").val(res.Id);
+                    $("#Title_Ar").val(res.Title_Ar);
+                    $("#Title_En").val(res.TitleEn);
+                    $("#DescriptionAr").val(res.Description_Ar);
+                    $("#Text_En").val(res.Text_En);
+                    $("#Text_Ar").val(res.Tex_Ar);
+                    $("#DropDwn1 option:selected").text(res.Author.Name_En);
+                    $("#DropDwn2 option:selected").text(obj.Category.Title_En);
+                    $("#ImageName").val(res.ImageName);
+                }
+            });
+
+        });
+     
+
+     
+    });
+</script>

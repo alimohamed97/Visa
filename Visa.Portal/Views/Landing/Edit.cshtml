@@ -1,0 +1,391 @@
+﻿@model LandingVm
+
+
+<div class="post d-flex flex-column-fluid" id="kt_post">
+    <div id="kt_content_container" class="container-xxl">
+        <div class="card shadow-sm">
+            <div class="card-header">
+                <h3 class="card-title">Edit Landing</h3>
+            </div>
+            <form class="form" asp-controller="Landing" asp-action="Edit" method="post" enctype="multipart/form-data">
+
+                <input type="hidden" asp-for="Id" value="@Model.Id" />
+                <input type="hidden" asp-for="ImageName" value="@Model.ImageName" />
+
+
+                <br /><br />
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <br /><br />
+
+                <div class="card-body">
+                    <div class="form-group py-2">
+                        <div class="row">
+                            <div class="col-6">
+                                <!--begin::Label-->
+                                <label class="required fs-6 fw-bold mb-2" for="TitleAr">Arabic Title</label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <input type="text" class="form-control form-control-solid" asp-for="TitleAr" />
+                                <!--end::Input-->
+                            </div>
+                            <div class="col-6">
+                                <!--begin::Label-->
+                                <label class="fs-6 fw-bold mb-2" for="TitleEn">
+                                    <span class="required">English Title</span>
+
+                                </label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <input type="text" class="form-control form-control-solid" asp-for="TitleEn" />
+                                <!--end::Input-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group py-2">
+                        <div class="row">
+                            <div class="col-6">
+                                <!--begin::Label-->
+                                <label class="fs-6 fw-bold mb-2" for="DescriptionEn">
+                                    <span class="required">English Description</span>
+                                </label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <textarea type="text" class="form-control form-control-solid" rows="4" asp-for="DescriptionEn"></textarea>
+                                <!--end::Input-->
+                            </div>
+                            <div class="col-6">
+                                <!--begin::Label-->
+                                <label class="fs-6 fw-bold mb-2" for="DescriptionAr">
+                                    <span class="required">Arabic Description</span>
+                                </label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <textarea type="text" class="form-control form-control-solid" rows="4" asp-for="DescriptionAr"></textarea>
+                                <!--end::Input-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group py-2">
+                        <div class="row">
+                            <div class="col-6">
+                                <!--begin::Label-->
+                                <label class="fs-6 fw-bold mb-2" for="VideoTitleAr">
+                                    <span class="required">Arabic Video Title</span>
+                                </label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <input type="text" class="form-control form-control-solid" asp-for="VideoTitleAr" id="VideoTitleAr" />
+                                <!--end::Input-->
+                            </div>
+                            <div class="col-6">
+                                <!--begin::Label-->
+                                <label class="fs-6 fw-bold mb-2" for="VideoTitleEn">
+                                    <span class="required">English Video Title</span>
+                                </label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <input type="text" class="form-control form-control-solid" asp-for="VideoTitleEn" id="VideoTitleEn" />
+                                <!--end::Input-->
+                            </div>
+                        </div>
+                    </div>
+
+                
+
+                    <div class="form-group py-2">
+                        <div class="row">
+                            <div class="col-12">
+                                <!--begin::Label-->
+                                <label class="fs-6 fw-bold mb-2" for="VedioUrl">
+                                    <span> VideoUrl</span>
+                                </label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <input type="url" class="form-control form-control-solid" asp-for="VedioUrl" />
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <br />
+                    <br />
+
+                    <div class="form-group py-2">
+                        <div class="row">
+                            <div class="col-6">
+                                <!--begin::Label-->
+                                <label class="fs-6 fw-bold mb-2" for="Image">
+                                    <span class="required">Upload Image</span>
+                                </label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <input type="file" class="form-control form-control-solid" asp-for="Image" />
+                                <img src="~/Files/Imgs/@Model.ImageName" width="50" height="50" />
+                            </div>
+                            <div class="col-6">
+                                <label for="" class="form-label">Country:</label>
+                                <select class="form-select form-select-solid" data-control="select2"
+                                        data-placeholder="Select Country" asp-for="CountryId">
+                                    <option>--Select--</option>
+                                    <option value="1">Malizia</option>
+                                    <option value="2">eGYPT</option>
+                                    <option value="3">Australia</option>
+                                    <option value="4">Austria</option>
+                                    <option value="5">Azerbaijan</option>
+                                    <option value="6">Bahamas</option>
+                                    <option value="7">Bahrain</option>
+                                    <option value="8">Bangladesh</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                    <br />
+                    <br />
+
+
+                    @*    Faqustion*@
+                    <div class="card shadow-sm">
+                        <div class="card-header">
+                            <h3 class="card-title">Add FA Qustions</h3>
+                        </div>
+
+                        <div class="card-body">
+                            <!--begin::Table-->
+                            <table class="table align-middle table-row-dashed fs-6 gy-5 FQA_Table" id="kt_customers_table">
+                                <!--begin::Table head-->
+                                <thead>
+                                    <!--begin::Table row-->
+                                    <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                                        <th class="min-w-125px">Arabic Question</th>
+                                        <th class="min-w-125px">Arabic Answer</th>
+                                        <th class="min-w-125px">English Question </th>
+                                        <th class="min-w-125px">English Answer</th>
+
+
+                                        <th class="text-end min-w-70px">
+                                            <input type="button" id="FQA" class="btn btn-primary" value="Add FQA" />
+                                        </th>
+                                    </tr>
+                                    <!--end::Table row-->
+                                </thead>
+                                <!--end::Table head-->
+                                <!--begin::Table body-->
+                                <!--end::Table body-->
+                                <tbody>
+                                    @for (int i = 0; i < Model.FaQuestion.Count; i++)
+                                    {
+                                        <tr>
+                                            <td><input type="text" class="form-control form-control-solid" asp-for="FaQuestion[i].QuestionAr" /></td>
+                                            <td><input type="text" class="form-control form-control-solid" asp-for="FaQuestion[i].AnswerAr" /></td>
+                                            <td><input type="text" class="form-control form-control-solid" asp-for="FaQuestion[i].QuestionEn" /></td>
+                                            <td><input type="text" class="form-control form-control-solid" asp-for="FaQuestion[i].AnswerEn" /></td>
+                                            <td>
+                                                <input type="hidden" asp-for="FaQuestion[i].Id" value="@Model.FaQuestion[i].Id" />
+                                            </td>
+                                          
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <!--end::Table-->
+                        </div>
+
+                    </div>
+
+                    <br /><br />
+
+                    @*stampedvisa*@
+                    <div class="card shadow-sm">
+                        <div class="card-header">
+                            <h3 class="card-title">Add The StampedVisa </h3>
+                        </div>
+
+                        <div class="card-body">
+                            <!--begin::Table-->
+                            <table class="table align-middle table-row-dashed fs-6 gy-5 STV_Table" id="kt_customers_table">
+                                <!--begin::Table head-->
+                                <thead>
+                                    <!--begin::Table row-->
+                                    <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                                        <th class="min-w-125px">Arabic Title</th>
+                                        <th class="min-w-125px">English Title</th>
+                                        <th class="min-w-125px">Image Upload </th>
+                                        <th></th>
+                                        <th class="min-w-125px">Steps</th>
+
+                                        <th class="text-end min-w-70px">
+                                            <input type="button" id="STV" class="btn btn-primary" value="Add Stamped Visa" />
+                                        </th>
+
+
+
+                                    </tr>
+                                    <!--end::Table row-->
+                                </thead>
+                                <!--end::Table head-->
+                                <!--begin::Table body-->
+                                <!--end::Table body-->
+                                <tbody>
+                                    @for (int i = 0; i < Model.StampedVisa.Count; i++)
+                                    {
+                                        <tr>
+                                            <td><input type="text" class="form-control form-control-solid" asp-for="StampedVisa[i].TitleAr" /></td>
+                                            <td><input type="text" class="form-control form-control-solid" asp-for="StampedVisa[i].TitleEn" /></td>
+                                            <td>
+                                                <input type="file" class="form-control form-control-solid" asp-for="StampedVisa[i].Image" />
+                                            </td>
+                                            <td>
+                                                <img src="~/Files/Imgs/@Model.StampedVisa[i].ImageName" width="50" height="50" />
+                                            </td>
+                                            <td>
+                                                <select class="form-select form-select-solid" data-control="select2"
+                                                    data-placeholder="Select Country" asp-for="StampedVisa[i].StepId" asp-items="(SelectList)ViewBag.StepList">
+                                                    <option>--Select--</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <input type="hidden" asp-for="StampedVisa[i].Id" value="@Model.StampedVisa[i].Id" />
+                                            </td>
+                                            <td>
+                                                <input type="hidden" asp-for="StampedVisa[i].ImageName" value="@Model.StampedVisa[i].ImageName" />
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <!--end::Table-->
+
+                        </div>
+                    </div>
+
+                    <br /> <br />
+                    <center>
+                        <input type="submit" value="Update" class="btn btn-lg btn-primary" />
+                        <input type="reset" value="Clear" class="btn btn-lg btn-warning" />
+                    </center>
+                    <br /> <br />
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<script src="~/assets/jquery/jquery.min.js"></script>
+<script>
+
+
+
+    $(function () {
+
+        var count_FQA = 0, count_STV = 0;
+
+        $(".x-Landing").click(function () {
+
+            var landingId = $(this).val();
+            $.ajax({
+
+                type: "Post",
+                url: "/Landing/GetLandingById/",
+                data: { id: landingId },
+                success: function (res) {
+
+
+
+                    $("#Id").val(res.Id);
+                    $("#TitleAr").val(res.TitleAr);
+                    $("#TitleEn").val(res.TitleEn);
+                    $("#DescriptionAr").val(res.DescriptionAr);
+                    $("#DescriptionEn").val(res.DescriptionEn);
+                    $("#VideoTitleAr").val(res.VideoTitleAr);
+                    $("#VideoTitleEn").val(res.VideoTitleEn);
+                    $("#VedioUrl").val(res.VedioUrl);
+                    $("#ImageName").val(res.ImageName);
+                }
+            });
+
+        });
+
+
+        $("#FQA").click(function () {
+
+
+            $(".FQA_Table tbody").append(`
+                               <tr>
+
+                      <td> <textarea type="text" class="form-control form-control-solid"name="FaQuestion[`+ count_FQA + `].QuestionAr" ></textarea> </td>
+                       <td> <textarea type="text" class="form-control form-control-solid"name="FaQuestion[`+ count_FQA + `].AnswerAr" ></textarea> </td>
+                      <td> <textarea type="text" class="form-control form-control-solid"name="FaQuestion[`+ count_FQA + `].QuestionEn" ></textarea> </td>
+                       <td> <textarea type="text" class="form-control form-control-solid"name="FaQuestion[`+ count_FQA + `].AnswerEn" ></textarea> </td>
+                              <td><input type="button" class="btn btn-danger FQA_Rmv" value="Delete" /></td>
+
+                              <tr>
+                            `);
+            count_FQA += 1;
+        });
+
+
+
+
+
+
+
+
+
+        $("#STV").click(function () {
+
+
+            $.ajax({
+
+                type: "Post",
+                url: "/Landing/GetSteps",
+                success: function (res) {
+                    $(".STV_Table tbody").append(`
+                                       <tr>
+                        <td> <textarea type="text" class="form-control form-control-solid"name="StampedVisa[`+ count_STV + `].TitleAr" ></textarea> </td>
+                         <td> <textarea type="text" class="form-control form-control-solid"name="StampedVisa[`+ count_STV + `].TitleEn" ></textarea> </td>
+                         <td><input type="file" class="form-control form-control-solid" name="StampedVisa[`+ count_STV + `].Image" /></td>
+                         <td></td>
+
+                          <td>        <select id="Steps`+ count_STV + `" class="form-select form-select-solid Steps" data-control="select2" name="StampedVisa[` + count_STV + `].StepId">
+                                             <option>--Select--</option>
+                                            </select>
+                            </td>
+                                         <td  class="text-end min-w-70px">
+                                         <input type="button" class="btn btn-danger STV_Rmv" value="Delete" /></td>
+                                       <tr>
+                                   `);
+
+                    $.each(res, function (i, e) {
+                        $("#Steps" + count_STV + "").append("<option value=" + e.Id + ">" + e.Name_En + "</option>");
+                    });
+
+                    count_STV += 1;
+                }
+
+            });
+
+
+
+        });
+
+
+
+
+        $(".FQA_Table,.STV_Table").on("click", ".FQA_Rmv,.STV_Rmv", function () {
+
+            $(this).parent().parent().remove();
+        });
+
+    });
+</script>

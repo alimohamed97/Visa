@@ -1,0 +1,86 @@
+.header-usa
+{  
+    background: url(../images/new/usa/header.png);
+    background-size: cover !important;
+    height: 100vh !important;
+    padding-top: 320px !important;
+}
+
+.header-usa .box-header{transform: translateY(-85px) !important;} 
+
+.header-usa .welcome-text{transform: translateY(-100px) !important;}
+
+.under-header-usa p{font-size: 37px;}
+
+
+@media(max-width:991px){
+    .header-usa{height: 100% !important;}
+    .header-usa{padding-top: 0 !important;}
+    .header-usa .box-header{margin: -22px !important;transform: translateY(-10px) !important;}
+    .header-usa .box-usa{transform: translateY(0px) !important;}
+    .under-header-usa{top:-15px !important;}
+    .under-header-usa p{font-size: 16px !important;}
+    .p-youtube-braizl span{font-size: 20px !important;}
+    .p-youtube-usa span{font-size: 20px;}
+    .p-youtube-usa span:last-child{font-size:20px;}
+    .iframe iframe{width: 100% !important;height: 300px;}
+
+    .services-usa{transform:translateX(10px) !important}
+    .services-usa .offset-2{display: none !important;}
+    .services-usa .offset-3{display: none !important;}
+    .services-usa .last{margin-top: 20px !important;}
+
+    .header-usa .hero-inner{margin: 74px 0 !important;}
+}
+
+.box-services-requirments-usa1 .box-data::before,
+.box-services-requirments-usa2 .box-data::before,
+.box-services-requirments-usa3 .box-data::before,
+.box-services-requirments-usa4 .box-data::before,
+.box-services-requirments-usa5 .box-data::before,
+.box-services-requirments-usa6 .box-data::before,
+.box-services-requirments-usa7 .box-data::before,
+.box-services-requirments-usa8 .box-data::before,
+.box-services-requirments-usa9 .box-data::before,
+.box-services-requirments-usa10 .box-data::before,
+.box-services-requirments-usa11 .box-data::before,
+.box-services-requirments-usa12 .box-data::before,
+.box-services-requirments-usa13 .box-data::before
+{
+    content: "1";
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    text-align: center;
+    line-height: 2;
+    color:tomato;
+    border-radius: 50%;
+    border: 1px solid gray;
+    font-size: 25px;
+    left: 25px;
+    top: 14px;
+}
+
+.box-services-requirments-usa2 .box-data::before{content: "2" !important;}
+.box-services-requirments-usa3 .box-data::before{content: "3" !important;}
+.box-services-requirments-usa4 .box-data::before{content: "4" !important;}
+.box-services-requirments-usa5 .box-data::before{content: "5" !important;}
+.box-services-requirments-usa6 .box-data::before{content: "6" !important;}
+.box-services-requirments-usa7 .box-data::before{content: "7" !important;}
+.box-services-requirments-usa8 .box-data::before{content: "8" !important;}
+.box-services-requirments-usa9 .box-data::before{content: "9" !important;}
+.box-services-requirments-usa10 .box-data::before{content: "10" !important;}
+.box-services-requirments-usa11 .box-data::before{content: "11" !important;}
+.box-services-requirments-usa12 .box-data::before{content: "12" !important;}
+.box-services-requirments-usa13 .box-data::before{content: "13" !important;}
+
+/* .order-services-requirments-usa::after{
+    content: "";
+    width: 1px;
+    height: 100px;
+    position: absolute;
+    background: red;
+    left: 110px;
+} */

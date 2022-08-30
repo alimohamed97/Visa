@@ -1,0 +1,62 @@
+.header-egypt
+{  
+    background: url(../images/new/egypt/header.png);
+    background-size: cover !important;
+    height: 100vh !important;
+    padding-top: 320px !important;
+}
+
+.header-egypt .box-header{transform: translateY(-80px) !important;} 
+.service-egypt .p-youtube
+{
+    width: 100% !important;
+    color:#111!important;
+    border-color: #6DBC92 !important;
+}
+
+.service-egypt .p-youtube span{margin-bottom: 30px;line-height: 1.3;}
+
+.service-egypt{padding: 2rem 0 !important;}
+
+.under-header-egypt p{font-size: 35px !important;}
+.header-egypt .box-header{margin: 0 50px !important;}
+
+
+.service-egypt .title-services-youtube{font-size: 25px;margin-bottom: 40px;}
+.service-egypt .title-services-youtube:after{
+    content:"";
+    width: 30%;
+    height: 2px;
+    background: #6DBC92;
+    margin: 5px auto;
+    display: block;
+}
+
+
+.service-egypt iframe{border-radius: 20px;}
+
+.service-egypt .box{border-color: #6DBC92;}
+
+.service-egypt .ask:after{background: #6DBC92 !important;}
+.ask-egypt h2{text-transform:capitalize !important;}
+.ask-egypt h2:after{background: #6DBC92 !important;}
+.ask-egypt p{line-height: 2.2;}
+
+
+.p-youtube-egypt span{font-size: 30px;font-weight:bolder;display: block;}
+
+.p-youtube-egypt span:last-child{float:right;color:#111;font-size:26px;font-weight: bolder;transform: translateY(-20px);}
+
+@media(max-width:991px){
+    .header-egypt{height: 100% !important;}
+    .header-egypt{padding-top: 0 !important;}
+    .header-egypt .box-header{margin: -22px !important;transform: translateY(-10px) !important;}
+    .header-egypt .box-egypt{transform: translateY(0px) !important;}
+    .under-header-egypt{top:-15px !important;}
+    .under-header-egypt p{font-size: 16px !important;}
+    .p-youtube-braizl span{font-size: 20px !important;}
+    .p-youtube-egypt span{font-size: 20px;}
+    .p-youtube-egypt span:last-child{font-size:20px;}
+    .iframe iframe{width: 100% !important;height: 300px;}
+    .header-egypt .hero-inner{margin:76px 0 !important;}
+}

@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable></Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\LandPageVm\**" />
+    <EmbeddedResource Remove="Models\LandPageVm\**" />
+    <None Remove="Models\LandPageVm\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Visa.DAL\Visa.DAL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,100 @@
+#track_your_request{
+    padding-top: 3px !important;
+}
+form>div{
+    height: 390px;
+    flex-direction: column;
+    width: 500px;
+    padding-left: 10%;
+    padding-top: 10%;
+    display: flex;
+    border: 4px solid #B22D34;
+    border-radius: 10px;
+    
+}
+
+form>div>input{
+    width: 90%;
+    border-radius: 8px;
+    border: 1px solid #a92e33;
+    padding: 1.5%;
+    background: white!important;
+}
+form>div>input::placeholder{
+    color: #808080c9;
+    font-size: small;
+    font-family: Khmer MN !important;
+    
+}
+input[type="date"]::-webkit-datetime-edit-text,
+input[type="date"]::-webkit-datetime-edit-month-field,
+input[type="date"]::-webkit-datetime-edit-day-field,
+input[type="date"]::-webkit-datetime-edit-year-field {
+    color: #808080c9;
+}
+form>div>.track_your_request_button{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    
+    
+}
+
+form>div>#close_menu{
+
+width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 25px;
+    color: #ffffff;
+
+}
+form>div>label{
+    margin-top: 25px;
+    margin-bottom: -2px;
+    color: #B33239 !important; 
+    font-family: Khmer MN !important;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+form>div>div button{
+
+    margin-top: 20px;
+    background-color:  #ac3035;
+    border-radius: 12px;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Khmer MN';
+    padding: 2% 9% 2% 9%;
+    border: 1px solid #a92e33;
+
+}
+
+
+
+form>div:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 35%;
+    margin-left: -35px;
+    margin-top: -15px;
+    width: 0;
+    z-index: 1;
+    height: 0;
+    border-bottom: solid 15px #aa2f34;
+    border-left: solid 15px transparent;
+    border-right: solid 15px transparent;
+    
+}
+
+
+
+@media only screen and (max-width: 530px) {
+    form>div{
+    width: 100vw !important;
+ }
+}
